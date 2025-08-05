@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games - Ascend Coaching</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">ASCEND</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="prices.html" class="nav-link">Prices</a></li>
+                <li class="nav-item"><a href="games.html" class="nav-link current">Games</a></li>
+                <li class="nav-item"><a href="discord.html" class="nav-link">Discord</a></li>
+            </ul>
+            <a href="discord.html" class="cta-button nav-cta">Book Now</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- MODIFIED: Added 'hidden' class for scroll animation -->
+        <section class="games-section hidden">
+            <h2 class="section-title">The Games We Master</h2>
+            <p class="section-subtitle">Our coaches are experts in today's top competitive titles. Find your game and book a session on Discord.</p>
+            
+            <div class="games-grid">
+                <div class="game-card featured">
+                    <!-- This image needs to be in your project folder -->
+                    <img src="Fortnite_logo.png" alt="Fortnite Logo" class="game-logo">
+                    <h3>Fortnite (Main Game)</h3>
+                    <p>As our premier title, we offer in-depth coaching on build/zero-build strategies, endgame rotations, piece control, and aim mechanics to help you secure the Victory Royale.</p>
+                    <a href="discord.html" class="cta-button">Book Fortnite Coaching</a>
+                </div>
+
+                <div class="game-card">
+                    <!-- This is the new "Coming Soon" placeholder -->
+                    <div class="coming-soon-placeholder">
+                        Coming Soon
+                    </div>
+                    <h3>Counter-Strike</h3>
+                    <p>Master spray control, utility usage, map control, and economic strategy. Our coaches will refine your crosshair placement and game sense for this legendary tactical shooter.</p>
+                     <a href="discord.html" class="cta-button-outline disabled">Unavailable</a>
+                </div>
+
+                <div class="game-card">
+                    <!-- This is the new "Coming Soon" placeholder -->
+                    <div class="coming-soon-placeholder">
+                        Coming Soon
+                    </div>
+                    <h3>Rocket League</h3>
+                    <p>Focus on aerial mechanics, defensive rotations, boost management, and team passing plays. We'll help you fly higher and score more consistently on the pitch.</p>
+                     <a href="discord.html" class="cta-button-outline disabled">Unavailable</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 Ascend Coaching. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- NEW: JavaScript for scroll animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>

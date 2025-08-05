@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord - Ascend Coaching</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">ASCEND</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="prices.html" class="nav-link">Prices</a></li>
+                <li class="nav-item"><a href="games.html" class="nav-link">Games</a></li>
+                <li class="nav-item"><a href="discord.html" class="nav-link current">Discord</a></li>
+            </ul>
+            <a href="discord.html" class="cta-button nav-cta">Book Now</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- MODIFIED: Added 'hidden' class for scroll animation -->
+        <section class="discord-section hidden">
+            <div class="discord-content">
+                <h2>Join the Ascend Community</h2>
+                <p>Your journey starts here. Our Discord server is the heart of the Ascend community. It's where you'll book sessions, find teammates, get quick tips from coaches, and connect with players who are as serious about improving as you are.</p>
+                <a href="https://discord.gg/yQb2Nu2vBA" target="_blank" class="cta-button large">Click Here to Join the Discord!</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 Ascend Coaching. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- NEW: JavaScript for scroll animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>

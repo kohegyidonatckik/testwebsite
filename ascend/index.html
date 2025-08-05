@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascend Coaching - Elevate Your Gameplay</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">ASCEND</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link current">Home</a></li>
+                <li class="nav-item"><a href="prices.html" class="nav-link">Prices</a></li>
+                <li class="nav-item"><a href="games.html" class="nav-link">Games</a></li>
+                <li class="nav-item"><a href="discord.html" class="nav-link">Discord</a></li>
+            </ul>
+            <a href="discord.html" class="cta-button nav-cta">Book Now</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Elevate Your Gameplay. Dominate the Competition.</h1>
+                <p>Personalized coaching designed to unlock your true potential.</p>
+                <a href="discord.html" class="cta-button">Start by Joining Discord</a>
+            </div>
+        </section>
+
+        <!-- MODIFIED: Added 'hidden' class for scroll animation -->
+        <section class="info-section hidden">
+            <h2 class="section-title">The Ascend Advantage</h2>
+            <div class="advantage-cards">
+                <div class="card">
+                    <h3>Personalized Training</h3>
+                    <p>We analyze your gameplay to create a custom roadmap focused on turning your weaknesses into strengths.</p>
+                </div>
+                <div class="card">
+                    <h3>Expert Coaches</h3>
+                    <p>Learn from seasoned experts who have competed at the highest levels and know what it takes to win.</p>
+                </div>
+                <div class="card">
+                    <h3>Supportive Community</h3>
+                    <p>Join our active Discord to find teammates, share strategies, and grow with other dedicated players.</p>
+                </div>
+            </div>
+        </section>
+
+         <!-- MODIFIED: Added 'hidden' class for scroll animation -->
+         <section class="how-it-works hidden">
+             <h2 class="section-title">Start Your Ascent in 3 Easy Steps</h2>
+             <div class="steps">
+                <div class="step">
+                    <span>1</span>
+                    <h4>Explore Our Plans</h4>
+                    <p>See our pricing and find the package that fits your goals.</p>
+                </div>
+                 <div class="step">
+                    <span>2</span>
+                    <h4>Join the Discord</h4>
+                    <p>Connect with our community and coaches to book your session.</p>
+                </div>
+                 <div class="step">
+                    <span>3</span>
+                    <h4>Improve and Climb</h4>
+                    <p>Implement expert feedback and watch your skills soar.</p>
+                </div>
+             </div>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 Ascend Coaching. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- NEW: JavaScript for scroll animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Optional: unobserve the element after it's visible
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Trigger when 10% of the element is in view
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>

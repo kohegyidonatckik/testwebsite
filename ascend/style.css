@@ -1,0 +1,430 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --deep-blue: #0A2540;
+    --bright-blue: #007BFF;
+    --mid-blue: #1a4f8a; 
+    --white: #FFFFFF;
+    --light-gray: #f4f4f9;
+    --dark-text: #333333;
+    --disabled-gray: #999;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    color: var(--dark-text);
+    line-height: 1.6;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 {
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.section-title {
+    text-align: center;
+    padding: 2rem 0 0 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+
+/* --- Navigation Bar --- */
+.main-header {
+    background-color: var(--deep-blue);
+    padding: 1rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.current {
+    color: var(--bright-blue);
+}
+
+.nav-cta {
+    display: block; 
+}
+
+
+/* --- Buttons --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--bright-blue);
+    color: var(--white);
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+.cta-button-outline {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--bright-blue);
+    padding: 10px 22px;
+    border-radius: 5px;
+    border: 2px solid var(--bright-blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.cta-button-outline:hover {
+    background-color: var(--bright-blue);
+    color: var(--white);
+}
+
+.cta-button-outline.disabled, .cta-button-outline.disabled:hover {
+    color: var(--disabled-gray);
+    border-color: var(--disabled-gray);
+    background-color: transparent;
+    cursor: not-allowed;
+}
+
+.cta-button.large {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+}
+
+/* --- Hero Section (Homepage) --- */
+.hero {
+    background: linear-gradient(180deg, var(--deep-blue) 0%, var(--mid-blue) 100%);
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+/* NEW: Animation for hero content */
+.hero-content h1 {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-content p {
+    /* Set initial state for animation */
+    opacity: 0; 
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+}
+
+.hero-content .cta-button {
+    /* Set initial state for animation */
+    opacity: 0;
+    animation: fadeInUp 0.8s ease-out 0.8s forwards;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin: 1rem 0 2rem 0;
+}
+
+
+/* --- Advantage Section (Homepage) --- */
+.info-section {
+    padding: 4rem 5%;
+}
+
+.advantage-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    text-align: center;
+}
+
+/* --- How It Works Section (Homepage) --- */
+.how-it-works {
+    background-color: var(--light-gray);
+    padding: 4rem 5%;
+    text-align: center;
+}
+
+.steps {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.step span {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: var(--bright-blue);
+    color: var(--white);
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* --- Pricing Section (Prices Page) --- */
+.pricing-section {
+    padding: 4rem 5%;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    justify-content: center;
+}
+
+.price-card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.price-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.price-card.featured {
+    border: 2px solid var(--bright-blue);
+    transform: scale(1.05);
+}
+.price-card.featured:hover {
+     transform: scale(1.08);
+}
+
+.price-card h3 {
+    font-size: 1.5rem;
+    color: var(--deep-blue);
+}
+
+.price-card .price {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--deep-blue);
+    margin: 1rem 0;
+}
+
+.price-card .price-per {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+}
+
+.price-card ul {
+    list-style: none;
+    margin: 1.5rem 0;
+    flex-grow: 1; 
+}
+
+.price-card ul li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.price-card ul li:last-child {
+    border-bottom: none;
+}
+
+/* --- Games Section (Games Page) --- */
+.games-section {
+    padding: 4rem 5%;
+}
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.game-card {
+    background: var(--white);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.game-card.featured {
+    border: 2px solid var(--bright-blue);
+}
+
+.game-logo {
+    height: 80px;
+    margin-bottom: 1rem;
+}
+
+/* NEW: Styles for the "Coming Soon" placeholder */
+.coming-soon-placeholder {
+    height: 80px;
+    width: 80px;
+    margin-bottom: 1rem;
+    background-color: var(--light-gray);
+    border: 2px dashed var(--disabled-gray);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--disabled-gray);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+.game-card h3 {
+    margin-bottom: 1rem;
+}
+
+.game-card p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+
+/* --- Discord Section (Discord Page) --- */
+.discord-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 5%;
+    text-align: center;
+    min-height: 70vh;
+}
+
+.discord-content {
+    max-width: 700px;
+}
+
+.discord-content p {
+    font-size: 1.1rem;
+    margin: 1rem 0 2rem 0;
+}
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--deep-blue);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem 5%;
+}
+.footer-links a {
+    color: var(--white);
+    margin: 0 0.5rem;
+    text-decoration: none;
+}
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* --- NEW: Animation Keyframes and Scroll Classes --- */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.visible {
+    opacity: 1;
+}
+
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .nav-menu { display: none; }
+    .nav-cta { display: none; }
+
+    .steps { flex-direction: column; }
+
+    .price-card.featured { transform: scale(1); }
+    .price-card.featured:hover { transform: scale(1.02); }
+}

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Ascend Coaching</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="main-header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">ASCEND</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="prices.html" class="nav-link current">Prices</a></li>
+                <li class="nav-item"><a href="games.html" class="nav-link">Games</a></li>
+                <li class="nav-item"><a href="discord.html" class="nav-link">Discord</a></li>
+            </ul>
+            <a href="discord.html" class="cta-button nav-cta">Book Now</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- MODIFIED: Added 'hidden' class for scroll animation -->
+        <section class="pricing-section hidden">
+            <h2 class="section-title">Find the Perfect Coaching Plan</h2>
+            <p class="section-subtitle">To book any session, join our Discord, open a ticket, and let us know which plan you'd like.</p>
+
+            <div class="pricing-grid">
+                 <div class="price-card">
+                    <h3>🧪 Free Evaluation</h3>
+                    <div class="price">$0</div>
+                    <ul>
+                        <li>15-minute consultation (text or voice)</li>
+                        <li>Gameplay strengths + improvement focus</li>
+                        <li>1 per user</li>
+                    </ul>
+                    <a href="discord.html" class="cta-button-outline">Book on Discord</a>
+                </div>
+                <div class="price-card">
+                    <h3>🎥 VOD Review</h3>
+                    <div class="price">$5</div>
+                    <ul>
+                        <li>Submit up to 20 mins gameplay</li>
+                        <li>Timestamped analysis (mechanics, rotation, etc.)</li>
+                        <li>24–48hr delivery</li>
+                    </ul>
+                    <a href="discord.html" class="cta-button-outline">Book on Discord</a>
+                </div>
+                <div class="price-card">
+                    <h3>🎯 1-on-1 Coaching</h3>
+                    <div class="price">$10 <span class="price-per">/ 60 min</span></div>
+                    <ul>
+                        <li>Private session via Discord</li>
+                        <li>Personalized drills & feedback</li>
+                        <li>Session summary included</li>
+                    </ul>
+                    <a href="discord.html" class="cta-button-outline">Book on Discord</a>
+                </div>
+                <div class="price-card">
+                    <h3>🤝 Group Coaching</h3>
+                    <div class="price">$15 <span class="price-per">/ 60 min</span></div>
+                    <ul>
+                        <li>Up to 4 players</li>
+                        <li>Team comms, rotations, strategy</li>
+                        <li>Live Q&A and coaching</li>
+                    </ul>
+                    <a href="discord.html" class="cta-button-outline">Book on Discord</a>
+                </div>
+                <div class="price-card featured">
+                    <h3>🔥 Advanced 1-on-1</h3>
+                    <div class="price">$22 <span class="price-per">/ 90 min</span></div>
+                    <ul>
+                        <li>VOD + Live Coaching combo</li>
+                        <li>Custom roadmap + spreadsheet tracking</li>
+                        <li>Mechanics, mindset, tactics</li>
+                    </ul>
+                    <a href="discord.html" class="cta-button">Book on Discord</a>
+                </div>
+                <div class="price-card">
+                    <h3>🏆 Live Tournament Coaching</h3>
+                    <div class="price">$25</div>
+                    <ul>
+                        <li>Real-time guidance during scrims/tourneys</li>
+                        <li>Strategy calls & positioning support</li>
+                        <li>Focused on pressure handling</li>
+                    </ul>
+                    <a href="discord.html" class="cta-button-outline">Book on Discord</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>© 2025 Ascend Coaching. All Rights Reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+        </div>
+    </footer>
+
+    <!-- NEW: JavaScript for scroll animations -->
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const hiddenElements = document.querySelectorAll('.hidden');
+        hiddenElements.forEach((el) => observer.observe(el));
+    </script>
+
+</body>
+</html>
